@@ -1,0 +1,39 @@
+[ 개요 ]
+- 한국 SI 회사는 DB 관리 프로그램으로 Oracle, Mysql을 많이 사용
+- 그러나 Oracle은 유료, Mysql은 무료
+- 보통 일반적인 서비스를 만들때는 Mysql을 많이 사용(*무료)
+- Mysql의 가보를 마리아DB가 이어감
+- Mysql과 마리아DB는 실질적으로 같은 프로그램
+
+[ 개발환경 세팅 ]
+- XAMPP : 윈도우 개발환경 세팅을 쉽게 해주는 툴
+- 구글에서 XAMPP 검색 후 XAMPP for Windows로 다운로드
+- 설치시 Mysql만 체크 후 설치시작
+
+[ Mysql 세팅 ]
+- XAMPP > Config > logs : Mysql 관련 오류메시지 시간별로 기록
+- XAMPP > Config > my.ini
+- [client] : Mysql Client 부분의 세팅
+- [mysqld] : mysql 서버 관련된 설정 수행
+- [mysqld] 하단부에 "lower_case_table_names = 2" 입력
+- lower_case_table_names : table 이름의 소문자 허용
+- ##UTF-8 Settings : 하단부의 모든 주석 제거
+
+[ Mysql 실행 ]
+- cmd > cd xampp/mysql/cd/bin (이동)
+- mysql -u root -p : root라는 아이디로 mysql을 실행, 윈도우에서는 .exe 생략 가능
+- 첫 사용시 패스워드는 설치한 적이 없으므로 Enter로 패스
+- exit : DB 빠져나오는 명령어
+
+[ Sqlyog 설치 ]
+- https://sqlyog.softonic.kr
+
+[ Mysql 개념 ]
+- 웹의 서버 : 아파치, Nginx / 웹의 클라이언트 : 크롬(웹브라우저)
+- Mysql의 클라이언트 : mysql.exe
+- Mysql의 서버 : Mysql, Mysql의 클라이언트 : mysql.exe(cmd 환경), sqlyog(gui  환경)
+- Mysql은 데이터베이스가 아니라 데이터베이스를 관리하는 DBMS(DB Management System)
+- Myslq은 여러개의 DB를 관리
+
+[ SQL 문법 설명 ]
+https://velog.io/@ygh7687/SQL-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC

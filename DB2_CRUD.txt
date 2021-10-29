@@ -1,0 +1,104 @@
+# 기존에 mydb 데이터베이스가 존재 한다면 삭제
+
+# 새 데이터베이스(`mydb`) 생성
+
+# 새 데이터베이스(`mydb`) 선택
+
+# article 테이블 생성(id, regDate, title, body)
+
+# article 테이블 조회(*)
+
+# article 테이블에 데이터를 추가
+# regDate = NOW(), title = '제목', body = '내용'
+
+# article 테이블에 데이터를 추가
+# regDate = NOW(), title = '제목', body = '내용'
+
+# article 테이블 조회(*)
+
+# id가 NULL인 데이터 발견
+# id 데이터는 꼭 필수 이기 때문에 NULL을 허용하지 않도록 수정
+# id INT(10) NOT NULL
+
+# 기존의 NULL값 때문에 경고 발생
+# NOT NULL 옵션으로 인해 기존의 NULL값이 0으로 변경
+
+# article 테이블 조회(*)
+
+# 생각해 보니 모든 행(row)의 id 값은 중복 불가
+# 중복 불가한 유니크 값으로 변경
+
+# 그러나 오류가 발생
+# PRIMARY KEY는 중복을 허용하지 않음
+# 기존의 데이터 중에서 중복되는 값 존재
+
+# id가 0인 것 중에서 1개를 정수 1로 변경
+
+# article 테이블 조회(*)
+
+# 나머지 id 값이 0인것을 2로 변경
+
+# article 테이블 조회(*)
+
+# 다시 중복 불가한 유니크 값으로 변경
+# ADD PRIMARY KEY(id)
+
+# id 칼럼에 AUTO_INCREMENT 옵션 설정
+# AUTO_INCREMENT 데이터가 생길때마다 1개씩 증가
+# 옵션 추가시 기존 옵션도 다 기입
+
+# article 테이블 구조확인(desc)
+
+# 나머지 칼럼 모두에도 not null을 적용
+
+# id 칼럼에 UNSIGNED 속성을 추가
+
+# article 테이블 구조확인(desc)
+
+# 작성자(writer) 칼럼을 title 칼럼 다음에 추가
+# writer VARCHAR(100) NOT NULL
+
+# 작성자(writer) 칼럼의 이름을 nickname 으로 변경
+# ALTER TABLE article CHANGE oldName, newName
+
+# article 테이블 구조확인(desc)
+
+# hit 조회수 칼럼 추가
+# hit INT(10), 양수만 저장, NULL 불가, nick 칼럼 뒤
+
+# article 테이블 구조확인(desc)
+
+# hit 조회수 칼럼 삭제
+
+# article 테이블 구조확인(desc)
+
+# hit 조회수 칼럼을 다시 추가
+
+# article 테이블 값 조회
+
+# 비어있는 nickname 값 "무명"으로 변경
+
+# article 테이블 값 조회
+
+# article 테이블에 데이터 추가(regDate = NOW(), title = '제목3', body = '내용3', nickname = '홍길순', hit = 10)
+
+# article 테이블에 데이터 추가(regDate = NOW(), title = '제목4', body = '내용4', nickname = '홍길동', hit = 55)
+
+# article 테이블에 데이터 추가(regDate = NOW(), title = '제목5', body = '내용5', nickname = '홍길동', hit = 10)
+
+# article 테이블에 데이터 추가(regDate = NOW(), title = '제목6', body = '내용6', nickname = '임꺽정', hit = 100)
+
+# 조회수 가장 많은 게시물 3개 출력
+# 힌트 : ORDER BY, LIMIT
+
+# 작성자명이 '홍길'로 시작하는 게시물 출력
+# 힌트 : LIKE '홍길%'
+
+# 조회수가 10 이상 55 이하인 게시물 출력
+# 힌트 : WHERE 조건1 AND 조건2
+
+# 닉네임이 '무명'이 아니고 조회수가 50 이하인 게시물 출력
+# 힌트 : !=
+
+# 작성자가 '무명' 이거나 조회수가 55 이상인 게시물 출력
+# 힌트 : OR
