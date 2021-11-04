@@ -102,3 +102,5 @@
 
 # 작성자가 '무명' 이거나 조회수가 55 이상인 게시물 출력
 # 힌트 : OR
+
+https://programmers.co.kr/learn/courses/30/parts/17042
