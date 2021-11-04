@@ -16,27 +16,34 @@ USE `mydb`;
 # dept 테이블 조회
 
 # 사원(emp) 테이블 생성
+# id int(10) unsigned not null auto_increment,
+# primary key(id),
+# regDate datetime not null,
+# `name` char(100) not null,
+# deptId int(10) unsigned not null
 
 # emp 테이블 구조 확인
 
 # 사원 테이블에 홍길동(deptId = 1), 홍길순(deptId = 1), 임꺽정(deptId = 2) 추가
 
 # 사장님께 드릴 인명록을 생성
+# inner join 사용, id 값을 기준으로 join
 
 # 사장님께 드릴 인명록을 생성(v4, 사장님께서 보시기에 편한 칼럼명(AS))
 
 # 사원 테이블에서 연봉 칼럼 추가
+# salary int(10) unsigned not null, name 뒤에 추가
 
 # 각각 사원별로 연봉 책정하여 업데이트
 # 홍길동 => 5000, 홍길순 => 6000, 임꺽정 => 4000
 
 # 사원 수 출력
 
-# 가장 큰 사원 번호와 이름 출력
+# 가장 큰 사원 번호 출력
 
-# 가장 고액 연봉자의 연봉과 이름 출력
+# 가장 고액 연봉자의 연봉 출력
 
-# 가장 저액 연봉자의 연봉과 이름 출력
+# 가장 저액 연봉자의 연봉 출력
 
 # 회사의 1년 인건비 지출 내역
 

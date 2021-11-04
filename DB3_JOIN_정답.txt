@@ -67,14 +67,12 @@ SET regDate = NOW(),
 `name` = '임꺽정',
 deptId = 2;
 
-SELECT * FROM emp;
-
 # 사장님께 드릴 인명록을 생성
 # inner join 사용, id 값을 기준으로 join
-SELECT *
-FROM emp
-INNER JOIN dept
-ON emp.deptId = dept.id;
+SELECT e.id AS 사원번호, e.regDate AS 입사일, e.name AS 사원명, d.name AS 부서명
+FROM emp e
+INNER JOIN dept d
+ON e.deptId = d.id;
 
 # 사장님께 드릴 인명록을 생성(v4, 사장님께서 보시기에 편한 칼럼명(AS))
 SELECT e.id AS 사원번호,
@@ -110,22 +108,20 @@ SELECT * FROM emp;
 # 사원 수 출력
 SELECT COUNT(*) FROM emp;
 
-# 가장 큰 사원 번호와 이름 출력
-SELECT MAX(id), `name` FROM emp;
+# 가장 큰 사원 번호 출력
+SELECT MAX(id) FROM emp;
 
-# 가장 고액 연봉자의 연봉과 이름 출력
-SELECT MAX(salary), `name` FROM emp;
+# 가장 고액 연봉자의 연봉 출력
+SELECT MAX(salary) FROM emp;
 
-# 가장 저액 연봉자의 연봉과 이름 출력
-SELECT MIN(salary), `name` FROM emp;
+# 가장 저액 연봉자의 연봉 출력
+SELECT MIN(salary) FROM emp;
 
 # 회사의 1년 인건비 지출 내역
-SELECT SUM(salary)
-FROM emp;
+SELECT SUM(salary) FROM emp;
 
 # 회사의 인건비 지출 평균
-SELECT AVG(salary)
-FROM emp;
+SELECT AVG(salary) FROM emp;
 
 # 부서별 1년 인건비 지출 내역
 SELECT SUM(salary)
